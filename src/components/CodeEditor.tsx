@@ -79,7 +79,7 @@ export const CodeEditor: React.FC<CodeEditorProps> = ({
         }}
         language='javascript'
         theme='dark'
-        height='500px'
+        height='100%'
       />
     </div>
   );
