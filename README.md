@@ -82,6 +82,7 @@ show(<App/>)
 ## Tools
 - [Monaco code editor](https://www.npmjs.com/package/monaco-editor)
 - [esbuild](https://www.npmjs.com/package/esbuild)
+- [Lerna](https://www.npmjs.com/package/lerna)
 - [Axios](https://www.npmjs.com/package/axios)
 - [Prettier](https://www.npmjs.com/package/prettier)
 - [Redux](https://www.npmjs.com/package/redux)
