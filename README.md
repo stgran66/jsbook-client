@@ -1,46 +1,95 @@
-# Getting Started with Create React App
+# JS-book
+## Description 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+JS-book  is an interactive coding environment. You can write JavaScript, see it executed, and write comprehensive documentation using markdown.  
+It is a CLI application running using local-api, allowing to save your documentation into selected file on hardrive.  
+[Here is a live demo](https://stgran66.github.io/jsbook-client/) version to show application capabilities.  
+[NPM package page](https://www.npmjs.com/package/js-notebook-stgran)
 
-## Available Scripts
+## Table of contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [Tools and libraries](#tools)
 
-In the project directory, you can run:
 
-### `npm start`
+## Installation
+Install package  
+`npm install js-notebook-stgran -g`  
+And run command  
+`js-notebook-stgran serve [filename.js] [-p portnumber]`  
+It will open or create a file in your current directory (by defaults app opens or creates file named notebook.js)  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Alternatively, you can start the app with the package runner:  
+`npx js-notebook-stgran serve [filename.js] [-p portnumber]`  
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+This will start a server that serves the JS-book interface for the specified file. You can then open your browser and navigate to http://localhost:4005 (by default) to start using JS-book.
 
-### `npm test`
+## Usage
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Click any text cell to edit it
+- The code in each code editor is all joined together into one file. If you define a variable in cell #1, you can refer to it in any following cell!
+- You can show any React component, string, number, or anything else by calling the `show` function. This is a function built into this environment. Call show multiple times to show multiple values
+- Re-order or delete cells using buttons on the top right
+- Format code with Prettier using format button
+- Add new cells by hovering on the divider between each cell
+- You can directly import form NPM! 
 
-### `npm run build`
+All of your changes get saved to the file you opened JS-notebook with. So if you ran `npx js-notebook-stgran serve test.js`, all of the text and code you write will be saved to the `test.js` file.  
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Some examples:  
+Cell #1:
+```javascript
+import { useState } from 'react';
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+const Counter = () => {
+  const [count, setCount] = useState(0);
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  return (
+    <div>
+      <button
+        onClick={() => {
+          setCount(count + 1);
+        }}
+      >
+        Click
+      </button>
+      <h3>Count: {count}</h3>
+    </div>
+  );
+};
+// Display any variable or React Component by calling 'show'
+show(Counter); //React Component can be displayed as jsx (show(<Counter/>))
+```  
 
-### `npm run eject`
+Cell #2: 
+```javascript
+const App = () => {
+  return (
+    <div>
+      <h3>App says hi!</h3>
+      <i>Counter component will be rendered below...</i>
+      <hr />
+      {/* Counter was declared in the previous cell - 
+        we can reference it here! */}
+      <Counter />
+    </div>
+  );
+};
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+show(<App/>)
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Tools
+- [Monaco code editor](https://www.npmjs.com/package/monaco-editor)
+- [esbuild](https://www.npmjs.com/package/esbuild)
+- [Axios](https://www.npmjs.com/package/axios)
+- [Prettier](https://www.npmjs.com/package/prettier)
+- [Redux](https://www.npmjs.com/package/redux)
+- [LocalForage](https://www.npmjs.com/package/localforage)
+- [Express](https://www.npmjs.com/package/express)
+- [Commander](https://www.npmjs.com/package/commander)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
