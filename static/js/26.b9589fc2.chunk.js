@@ -1,0 +1,2 @@
+(this["webpackJsonpjsbook-client"]=this["webpackJsonpjsbook-client"]||[]).push([[26],{203:function(n,t){Prism.languages.arff={comment:/%.*/,string:{pattern:/(["'])(?:\\.|(?!\1)[^\\\r\n])*\1/,greedy:!0},keyword:/@(?:attribute|data|end|relation)\b/i,number:/\b\d+(?:\.\d+)?\b/,punctuation:/[{},]/}}}]);
+//# sourceMappingURL=26.b9589fc2.chunk.js.map

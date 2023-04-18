@@ -1,0 +1,2 @@
+(this["webpackJsonpjsbook-client"]=this["webpackJsonpjsbook-client"]||[]).push([[155],{332:function(t,n){Prism.languages.gcode={comment:/;.*|\B\(.*?\)\B/,string:{pattern:/"(?:""|[^"])*"/,greedy:!0},keyword:/\b[GM]\d+(?:\.\d+)?\b/,property:/\b[A-Z]/,checksum:{pattern:/\*\d+/,alias:"punctuation"},punctuation:/:/}}}]);
+//# sourceMappingURL=155.00245541.chunk.js.map
