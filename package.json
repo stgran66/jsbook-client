@@ -1,5 +1,6 @@
 {
-  "name": "@js-notebook/local-client",
+  "name": "jsbook-client",
+  "homepage": "https://stgran66.github.io/jsbook-client",
   "version": "1.0.0",
   "publishConfig": {
     "access": "public"
